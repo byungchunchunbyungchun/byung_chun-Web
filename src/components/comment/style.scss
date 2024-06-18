@@ -1,0 +1,58 @@
+.CommentMain{
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    height: 100%;
+    overflow: hidden;
+}
+.inputComment{
+    width: 90%;
+    height: 40px;
+    border: 2px solid lightgray;
+    .comment{
+        border: none;
+        width: 70%;
+        height: 90%;
+        outline: none;
+        font-size: 20px;
+    }
+}
+.CommentLine{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 350px;
+    .List{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100vh;
+
+        .comment{
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            width: 100%;
+            height: 50px;
+            gap: 10px;
+            .profile{
+                border-radius: 10%;
+                width: 50px;       
+                height: 50px;
+                img{
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            .name{
+                width: 50px;
+    
+            }
+            .text{
+                width: 90%;
+                height: 100%;
+            }
+        }
+    }
+   
+}
