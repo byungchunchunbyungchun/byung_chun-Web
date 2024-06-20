@@ -1,6 +1,9 @@
 export const queryKey = {
     comment:{
-        getComment:"",
+        getComment:"/comment",
         createComment:"",
+    },
+    meal :{
+        getMeal:"/meal"
     }
 }

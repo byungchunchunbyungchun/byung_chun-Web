@@ -1,20 +1,33 @@
 .CommentMain{
     display: flex;
     flex-direction: column;
+    align-items: center;
     width: 500px;
     height: 100%;
     overflow: hidden;
 }
 .inputComment{
+    display: flex;
     width: 90%;
     height: 40px;
     border: 2px solid lightgray;
     .comment{
+        display: flex;
         border: none;
-        width: 70%;
+        width: 90%;
         height: 90%;
         outline: none;
         font-size: 20px;
+        font-weight: 700;
+    }
+    button{
+        display: flex;
+        width: 40px;
+        height: 100%;
+        border: none;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
     }
 }
 .CommentLine{
@@ -34,7 +47,7 @@
             flex-direction: row;
             width: 100%;
             height: 50px;
-            gap: 10px;
+            gap: 5px;
             .profile{
                 border-radius: 10%;
                 width: 50px;       
@@ -46,11 +59,15 @@
             }
             .name{
                 width: 50px;
-    
+                font-weight: 700;
             }
             .text{
+                display: flex;
+                align-items: center;
                 width: 90%;
                 height: 100%;
+                font-weight: 700;
+                margin-left: 10px;
             }
         }
     }
