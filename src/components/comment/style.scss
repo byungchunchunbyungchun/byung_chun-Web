@@ -5,6 +5,7 @@
     width: 500px;
     height: 100%;
     overflow: hidden;
+    margin-top: 10px;
 }
 .inputComment{
     display: flex;
@@ -28,6 +29,7 @@
         align-items: center;
         justify-content: center;
         font-weight: 700;
+        cursor: pointer;
     }
 }
 .CommentLine{
@@ -64,9 +66,23 @@
             .text{
                 display: flex;
                 align-items: center;
-                width: 90%;
+                width: 70%;
                 height: 100%;
                 font-weight: 700;
+                margin-left: 10px;
+                overflow: hidden;
+            }
+            .likeButton{
+                display: flex;
+                width: 30px;
+                height: 30px;
+                cursor: pointer;
+            }
+            .delecteButton{
+                display: flex;
+                width: 30px;
+                height: 30px;
+                cursor: pointer;
                 margin-left: 10px;
             }
         }

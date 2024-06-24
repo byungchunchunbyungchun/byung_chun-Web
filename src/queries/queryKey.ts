@@ -4,6 +4,7 @@ export const queryKey = {
         createComment:"",
     },
     meal :{
-        getMeal:"/meal"
+        getMeal:"/meal",
+        getSelectMeal: "/meal/get"
     }
 }

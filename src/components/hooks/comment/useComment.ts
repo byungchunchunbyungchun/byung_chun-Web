@@ -16,13 +16,13 @@ const UseComment = () => {
     comment: isComment,
     author: "양예성",
     count: 0,
-    mealId: "",
+    mealId: 0,
   };
 
-  const createComment = () => {
+  const createComment = (e:React.FormEvent) => {
+    e.preventDefault();
     usePostComment.mutate(uploadData);
   };
-
 
   return {
     createComment,
