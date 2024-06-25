@@ -8,7 +8,7 @@ const Main = ()=>{
 return(
     <main className="main">
         <div className="mainGroup">
-            <Meal data={data} />
+            <Meal />
             <Comment mealId={data?.[0].id}/>
         </div>
     </main>

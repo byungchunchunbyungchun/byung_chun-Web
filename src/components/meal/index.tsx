@@ -11,7 +11,9 @@ interface Props {
   data?: MealResponse["data"];
 }
 
-const Meal = (data: Props, nextData: any) => {
+const Meal = () => {
+  const { data } = useMeal();
+  const [mealData, setmealData] = useState<MealResponse[]>([]);
   const [MealData, setMealData] = useState<mealOne["data"] | undefined>(
     undefined
   );
@@ -34,28 +36,54 @@ const Meal = (data: Props, nextData: any) => {
     }
   };
 
-
+  const [sld, setsds] = useState(false);
   const NextDay = async () => {
     await axios
       .get<MealResponse>(`${config.server}/meal/get`, {
         params: { year: 2024, month: 6, day: 25 },
       })
       .then((res) => {
+        setsds(true);
         setsdada(res.data);
       });
   };
 
   return (
     <>
-      {View ? null : (
+      {View ? null : sld ? (
+          <div className="meal">
+            <div className="MealMeun">
+              <img src={leftLine} alt="" />
+              <h1>{datads?.data?.[0].date}</h1>
+              <img src={rightLine} alt="" onClick={ NextDay} />
+            </div>
+            {datads?.data?.slice(0, 3).map((item, idx) => (
+              <div
+                key={item.id}
+                className="mealValue"
+                onClick={() => clickMealOne(item.id)}
+              >
+                <h2>
+                  {item.time === "breakfast"
+                    ? "아침 "
+                    : item.time === "lunch"
+                    ? "점심"
+                    : "저녁"}
+                </h2>
+                <div>{item.meal}</div>
+                <div>칼로리: {item.calorie}</div>
+              </div>
+            ))}
+          </div>
+        )
+        : (
         <div className="meal">
           <div className="MealMeun">
             <img src={leftLine} alt="" />
-            <h1>{data.data?.[0].date}</h1>
-            <img src={rightLine} alt="" onClick={() => NextDay} />
+            <h1>{data?.[0].date}</h1>
+            <img src={rightLine} alt="" onClick={ NextDay} />
           </div>
-
-          {data.data?.slice(0, 3).map((item, idx) => (
+          {data?.slice(0, 3).map((item, idx) => (
             <div
               key={item.id}
               className="mealValue"
